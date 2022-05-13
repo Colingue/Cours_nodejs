@@ -5,7 +5,7 @@ import res from "express/lib/response.js";
 import { ProductsController } from "./controllers/products.controller.js";
 import { ProductsRepository } from "./repository/products.repository.js";
 import { routes } from "./routes/products.routes.js";
-import { mongoose } from "mongoose"
+import mongoose  from "mongoose"
 
 const app = express();
 const PORT = 3001;
@@ -14,7 +14,6 @@ const PORT = 3001;
 mongoose.connect('mongodb://localhost:27017/projetnode',
   {
     useNewUrlParser: true,
-    useFindAndModify: false,
     useUnifiedTopology: true
   }
 );
