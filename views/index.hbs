@@ -1,13 +1,25 @@
-<h1> {{title}} </h1>
+<h2>Ajouter un produit</h2>
+<form method="post" action="">
+  <label name="name">Nom du produit</label>
+  <input type="text" name="name" />
+  <br>
+
+  <label name="quantity">Quantité</label>
+  <input type="number" name="quantity" />
+
+  <br>
+  <button type="submit">Ajouter</button>  
+</form>
+
+
 
 <ul class="product_list">
   {{#each products}}
   <div class="product">
-    <a href='/'{{this.id}}></a>
+    <a href='/'{{this._id}}></a>
     <span class="product"></span>
-      <span>{{this.id}}</span>
       <span>{{this.name}}</span>
-      <span>{{this.qty}}</span>
+      <span>{{this.quantity}}</span>
   </div>
   {{/each}}
 </ul>

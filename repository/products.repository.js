@@ -1,3 +1,4 @@
+
 import Product from "../models/products.models.js"
 // const Product = require("../models/products.models")
 export class ProductsRepository {
@@ -20,9 +21,15 @@ export class ProductsRepository {
   get(){
     const promise = new Promise((resolve, reject) => {
       // resolve(this.products)
-      resolve(Product.find())
-    })
+      Product.find().exec((error,result)=>{
+        if (error) throw error;
 
+        console.log(result);
+        resolve(result.map(x=>{
+          return x.toObject()
+        }))
+      })
+    })
     return promise;
     //console.log(Product.find())
   }
@@ -38,11 +45,34 @@ export class ProductsRepository {
   }
 
   create(product) {
-    const newProduct ={
+
+
+    const productData = new Product({
+      name: product.name,
+      quantity: product.quantity
+    });
+
+    const promise = new Promise((resolve, reject) => {
+      resolve(productData.save((err) => {
+        console.log("test")
+      }));
+      // resolve(this.products.find((p) => p.id === id))
+      
+    })
+
+    return promise;
+
+   
+    /*const newProduct ={
       ...product,
       id: ++this.index
-    };
+    }; 
+
+  
     this.products.push(newProduct);
     return newProduct;
+    */
+
+   
   }
 }

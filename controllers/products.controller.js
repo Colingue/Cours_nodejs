@@ -5,6 +5,7 @@ export class ProductsController {
 
   getAll(req, res) {
     this.repository.get().then((products) => {
+      console.log("products",products)
       res.render("index", { products });
     });
   }
@@ -23,6 +24,8 @@ export class ProductsController {
   }
 
   create(req, res) {
-    return this.repository.create(req.body);
+    return this.repository.create(req.body).then(()=>{
+      res.redirect("/")
+    });
   }
 }
