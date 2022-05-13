@@ -13,9 +13,10 @@ const PORT = 3001;
 
 mongoose.connect('mongodb://localhost:27017/projetnode',
   {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
+  useNewUrlParser: true, 
+  
+  useUnifiedTopology: true 
+  
   }
 );
 

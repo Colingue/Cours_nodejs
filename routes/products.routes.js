@@ -1,5 +1,4 @@
 import express from "express";
-import { productModel } from "../models/products.models"
 
 export function routes(controller) {
   const router = express.Router();
