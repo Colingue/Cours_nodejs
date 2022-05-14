@@ -5,7 +5,6 @@ export class ProductsController {
 
   getAll(req, res) {
     this.repository.get().then((products) => {
-      console.log("products",products)
       res.render("index", { products });
     });
   }
@@ -13,7 +12,6 @@ export class ProductsController {
   getOne(req, res) {
     const id = req.params.id;
 
-    // const product = this.repository.getOne(id);
     this.repository.getOne(id).then((product) => {
       res.render("details", { product });
     })
@@ -27,5 +25,22 @@ export class ProductsController {
     return this.repository.create(req.body).then(()=>{
       res.redirect("/")
     });
+  }
+
+  search(req, res){
+    const name = req.query.name;
+
+    this.repository.getByName(name).then((products) => {
+      res.render("search", { products })
+    })
+  }
+
+  delete(req, res) {
+
+    let name = req.params.name
+
+    this.repository.delete(name).then(() => {
+      res.redirect("/")
+    })
   }
 }

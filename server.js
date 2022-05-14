@@ -1,7 +1,5 @@
 import express from "express";
 import { create } from "express-handlebars";
-import req from "express/lib/request.js";
-import res from "express/lib/response.js";
 import { ProductsController } from "./controllers/products.controller.js";
 import { ProductsRepository } from "./repository/products.repository.js";
 import { routes } from "./routes/products.routes.js";

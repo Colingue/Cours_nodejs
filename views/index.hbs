@@ -11,15 +11,20 @@
   <button type="submit">Ajouter</button>  
 </form>
 
-
+<form method="GET" action="/search">
+    <input type="text" name="name" />
+    <button type="submit">Rechercher</button>  
+</form>
 
 <ul class="product_list">
   {{#each products}}
   <div class="product">
-    <a href='/'{{this._id}}></a>
+    <form method="GET" action="/delete/{{this.name}}">
+      <button type="submit">delete</button>
+    </form>
     <span class="product"></span>
       <span>{{this.name}}</span>
-      <span>{{this.quantity}}</span>
+      <span>{{this.quantity}}</span>     
   </div>
   {{/each}}
 </ul>

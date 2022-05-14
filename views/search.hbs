@@ -1,0 +1,14 @@
+<h1> Résultats de la recherche </h1>
+
+<ul class="product_list">
+  {{#each products}}
+  <div class="product">
+    <form method="GET" action="/delete/{{this.name}}">
+      <button type="submit">Supprimer</button>
+    </form>
+    <span class="product"></span>
+      <span>{{this.name}}</span>
+      <span>{{this.quantity}}</span>     
+  </div>
+  {{/each}}
+</ul>
