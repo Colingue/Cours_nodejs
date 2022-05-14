@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Lato';
+}
+
+.content{
+    width: 80%;
+    margin: auto;
+}
+
+form{
+    width: 500px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.form-group label{
+    margin-bottom: 5px;
+}
+
+.form-group input{
+    height: 20px;
+    padding: 5px;
+}
+
+ul{
+    padding: 0px;
+}
+
+#add_product{
+    margin-bottom: 20px;
+}
+
+button, .back{
+    background-color: rgb(67, 189, 255);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: "Lato";
+}
+
+button:hover{
+    background-color: rgb(32, 161, 230);
+}
+
+.product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(233, 245, 255);
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+.product form{
+    width: auto;
+}
+
+.product .name{
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product .quantity{
+    margin-right: 20px;
+}

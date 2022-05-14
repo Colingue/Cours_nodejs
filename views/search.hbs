@@ -1,14 +1,18 @@
+<span class="back" onclick="javascript:window.history.back(-1);"><- Retour</span>
+
 <h1> Résultats de la recherche </h1>
 
 <ul class="product_list">
+  <h2>Liste des produits</h2>
   {{#each products}}
   <div class="product">
-    <form method="GET" action="/delete/{{this.name}}">
-      <button type="submit">Supprimer</button>
-    </form>
-    <span class="product"></span>
-      <span>{{this.name}}</span>
-      <span>{{this.quantity}}</span>     
+     <div>
+        <span class="name">{{this.name}}</span>
+        <span class="quantity">Quantité : {{this.quantity}}</span>  
+     </div>
+      <form method="GET" action="/delete/{{this.name}}">
+      <button type="submit">delete</button>
+      </form>   
   </div>
   {{/each}}
 </ul>
